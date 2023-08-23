@@ -1,0 +1,1204 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description"  content="easily buy from anywhere in the universe order and get your needs">
+        <meta name="keywords"   content="shopeasy,e-commerce,online shopping">
+        <meta name="viewport"   content="width=device-width, initial-scale=1.0">
+        <title>first website</title>
+        <style>
+        *{
+            margin:0px;
+        }
+        body{
+            background-color: lightblue;
+        }
+        #header{
+            background-color: midnightblue;
+            text-align: right;
+            cursor: pointer;
+        }
+        #header>a{
+            color: white;
+            font-size: 18px;
+            text-decoration:none;
+            padding:10px;
+        }
+        button[type='button']{
+           color: white;
+           background-color: black;
+           border:none;
+           font-weight: bold;
+           padding:10px;
+           cursor: pointer;
+
+        }
+        .dropdown{
+            position:relative;
+            display:inline-block;
+        }
+        #content{
+            background-color: #f1f1f1;
+            position:absolute;
+            z-index: 1;
+            right:0;
+            display: none;
+        }
+        #content >a{
+            text-decoration: none;
+            font-size: 16px;
+            color:#111;
+            display: block;
+            padding:10px 25px
+        }
+        .dropdown:hover #content{
+            display:block;
+        }
+        #content >a:hover{
+            background-color:gainsboro;
+        }
+        #logosection{
+            position:relative;
+            background-color: lightgrey;
+            height:100px;
+        
+        }
+        #title{
+            position:absolute;
+            top:0px;
+            left:170px;
+
+        }
+        #categories{
+            background-color: #f1f1f1;
+            position:absolute;
+            width: 97.1%;
+            list-style-type: none;
+            left:40px;
+            top:135px;
+            border-style: inset;
+        }
+        #categories li{
+            display:flex;
+            flex-direction: column;
+            float: left;
+            padding:20px 81px 5px 0px;
+            background-color: #f1f1f1;
+        }
+        #categories img{
+            width:100px ;
+            height: 100px;
+        }
+        #categories a{
+            text-decoration: none;
+        }
+        .sidebar {
+      height:200%;
+      width: 0;
+      position:absolute;
+      z-index: 1;
+      top: 135px;
+      left: 0;
+      background-color: #111;
+     overflow-x: hidden;
+     transition: 0.5s;
+      padding-top: 60px;
+}
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+.sidebar a:hover {
+  color: #f1f1f1;
+
+}
+#menu{
+    height:200%;
+    top:135px;
+    background-color:black;
+    width:42px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+figcaption{
+    text-align: center;
+}
+#menubar svg{
+    width:30px ;
+    height:30px;
+}
+#searchbar{
+    float: right;
+    position:absolute;
+    right:80px;
+    top:150px;
+    
+}
+#searchbar input[type="text"]{
+    position:relative;
+    top:40px;
+    left:60px;
+    height: 47px;
+    width:250px;
+    background-color: white;
+    padding: 9px;
+    border:none;
+    border-style: inset;
+    cursor: pointer;
+}
+#searchbar button[type="submit"]{
+    position:relative;
+    top:44px;
+    left:10px;
+    height: 42px;
+    width: 40px;
+    background-color:white;
+    border:none;
+    cursor:pointer;
+
+}
+#searchbar button:hover{
+    background-color: #818181;
+}
+.Add-container{
+   position:absolute;
+   left:100px;
+   top:290px;
+   max-width: 1000px;
+   margin:auto;
+}
+.Add-container>a{
+    text-decoration: none;
+    font-size: 40px;
+}
+.Add img{
+    width: 147%;
+   
+    height: 70%;
+}
+.prev,.next{
+    cursor:pointer;
+    position: absolute;
+    top:50%;
+    left:-5
+    width:auto;
+    padding: 16px;
+    transition: 0.6s ease;
+    margin-top: -22px;
+    border-radius: 0 3px 3px 0;
+    background-color:white;
+    
+}
+.next{
+    right:-470px;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+  background-color:#818181;
+}
+.dot-container{
+    position:absolute;
+    top:545px;
+    left:700px;
+
+}
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 2px;
+  background-color:gray;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.active {
+  background-color: deepskyblue;
+}
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+#top-offers{
+    position:absolute;
+    top:570px;
+    left:30px;
+    background-color: #f1f1f1;
+    margin-left: 50px;
+    border-left: 50px;
+    width: 93%;
+    height:10%;
+    display: inherit;
+}
+#top-offers img{
+    position: absolute;
+    top:2px;
+    left:200px;
+}
+#timer{
+    position: relative;
+    top:-20px;
+    left:250px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #818181;
+}
+
+.row1{
+  float:left;
+  width:93%;
+  display:grid;
+  grid-auto-flow: column;
+  padding-top:50px;
+  padding-bottom:20px;
+  margin-top:-300px; 
+  position:absolute;
+  top:940px;
+  left:80px;
+  background-color: #f1f1f1;
+}
+.row1 img{
+    height:200px
+}
+.price {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+.price li {
+  text-align: center;
+}
+.price .header{
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:15px;
+    font-weight: bold;
+}
+.price .sub{
+    color:forestgreen
+}
+.price .grey {
+  font-size: 20px;
+  color: #818181;
+}
+
+@media only screen and (max-width: 600px) {
+  .columns {
+    width: 100%;
+  }
+}
+#electronics{
+    position:absolute;
+    left: 80px;
+    top: 1000px;
+    background-color: cornsilk;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top:20px;
+    width:89% ;
+}
+.row2{
+  float:left;
+  width:93%;
+  display:grid;
+  grid-auto-flow: column;
+  padding-top:50px;
+  padding-bottom:20px;
+  margin-top:-300px; 
+  position:absolute;
+  top:1350px;
+  left:80px;
+  background-color: #f1f1f1;
+}
+.row2 img{
+    width:250px;
+    height:200px;
+}
+#Beuty{
+    position:absolute;
+    left: 80px;
+    top: 1400px;
+    background-color: cornsilk;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top:10px;
+    width:89% ;
+}
+.row3{
+  float:left;
+  width:93%;
+  display:grid;
+  grid-auto-flow: column;
+  padding-top:50px;
+  padding-bottom:20px;
+  margin-top:-300px; 
+  position:absolute;
+  top:1745px;
+  left:80px;
+  background-color: #f1f1f1;
+}
+.row3 img{
+    height:200px;
+}
+#Sports{
+    position:absolute;
+    left: 80px;
+    top: 1800px;
+    background-color: cornsilk;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top:10px;
+    width:89% ;
+}
+.row4{
+  float:left;
+  width:93%;
+  display:grid;
+  grid-auto-flow: column;
+  padding-top:50px;
+  padding-bottom:20px;
+  margin-top:-300px; 
+  position:absolute;
+  top:2145px;
+  left:80px;
+  background-color: #f1f1f1;
+}
+.row4 img{
+    height: 200px;
+}
+#Home{
+    position:absolute;
+    left: 80px;
+    top: 2200px;
+    background-color: cornsilk;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top:10px;
+    width:89% ;
+}
+.row5{
+  float:left;
+  width:93%;
+  display:grid;
+  grid-auto-flow: column;
+  padding-top:50px;
+  padding-bottom:20px;
+  margin-top:-300px; 
+  position:absolute;
+  top:2543px;
+  left:80px;
+  background-color: #f1f1f1;
+}
+.row5 img{
+    height:200px;
+}
+#fashion{
+    position:absolute;
+    left: 80px;
+    top: 2600px;
+    background-color: cornsilk;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top:10px;
+    width:89% ;
+}
+.row6{
+  float:left;
+  width:93%;
+  display:grid;
+  grid-auto-flow: column;
+  padding-top:50px;
+  padding-bottom:20px;
+  margin-top:-300px; 
+  position:absolute;
+  top:2946px;
+  left:80px;
+  background-color: #f1f1f1;
+}
+.row6 img{
+    height:200px;
+}
+#furniture{
+    position:absolute;
+    left: 80px;
+    top: 3000px;
+    background-color: cornsilk;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top:10px;
+    width:89% ;
+}
+.row7{
+  float:left;
+  width:93%;
+  display:grid;
+  grid-auto-flow: column;
+  padding-top:50px;
+  padding-bottom:20px;
+  margin-top:-300px; 
+  position:absolute;
+  top:3345px;
+  left:80px;
+  background-color: #f1f1f1;
+}
+.row7 img{
+    height:200px;
+}
+#topstory{
+    position:absolute;
+    top:3400px;
+    
+}
+#topstory p{
+    color:dimgray;
+    font-size: 25px;
+    text-align: justify;
+    background-color: aliceblue;
+    border: #111;
+
+}
+#topstory span{
+    color:#818181;
+    font-size:20px;
+
+}
+#top{
+    color:#818181;
+    font-weight:bold;
+    font-size:20px;
+}
+.content{
+    color:#818181;
+    font-size: 9px;
+    font-weight: 100;
+}
+footer{
+  position:absolute;
+  top:6480px;
+  color:white;
+  background-color: darkblue;
+  width:99.9%;
+  
+  
+
+}
+footer li{
+    list-style: none;
+    color: #f1f1f1;
+    font-size: 17px;
+
+}
+.vertical {
+            border-left: 1px solid grey;
+            height: 250px;
+            position: relative;
+            top:70px;
+            
+        }
+#final{
+    padding: 20px;
+}
+#final p{
+    padding-right: 20px;
+    font-size: 18px;
+}
+#final a{
+    text-decoration: none;
+    color:white;
+    padding: 40px;
+}
+
+</style>
+    </head>
+    <body>
+        <div id="header">
+            <a href="privacy.html">privacy policy</a>
+            <a href="Terms.html">Terms and condition</a>
+        <div class="dropdown">
+            <button type="button" >login/signup</button>
+            <div id="content">
+                <a href="login.html">Login</a>
+                <a href="signup.html">SignUp</a>
+            </div>
+         </div>
+              
+        </div>
+        <div id="logosection">
+            <div id="logo">
+                <img src="logo.png" width="100px" height="100px"/>
+                <div id="title">
+                <h1>SHOPEASY</h1>
+                <p >--------------------------------<br>Buy your needs from anywhere</p>
+                </div>
+            </div>
+        </div>
+        <div id="menu">
+        <span style="color: #f1f1f1;cursor:pointer;font-size:25px ;" onclick="openbar()">&#9776</span>
+        </div>
+        <div id="categories">
+            <ul>
+                <li><a href="mobiles.html"><figure>
+                <img src="Mobiles.webp" width="70px" height="70px"/>
+                <figcaption>Mobiles</figcaption>
+                </figure></a></li>
+                <li><a href="fashion.html"><figure>
+                <img src="fashion.webp" width="70px" height="70px"/>
+                <figcaption>Fashion</figcaption>
+                </figure> </a></li>
+                <li><a href="Electronics.html"><figure>
+                <img src="electronics.webp" width="70px" height="70px"/>
+                <figcaption>Electronics</figcaption>
+                </figure></a></li>
+                <li><a href="Furnitures.html"><figure>
+                <img src="furniture.webp" width="70px" height="70px"/>
+                <figcaption>Furniture</figcaption>
+                </figure></a></li>
+                <li><a href="Appliances.html"><figure>
+                <img src="appliances.webp" width="70px" height="70px"/>
+                <figcaption>Appliances</figcaption>
+                </figure></a></li>
+                <li><a href="Beuty.html"><figure>
+                <img src="beuty.webp" width="70px" height="70px"/>
+                <figcaption>Beuty</figcaption>
+                </figure></a></li>
+                <li><a href="Grocery.html"><figure>
+                <img src="grocery.webp" width="70px" height="70px"/>
+                <figcaption>Grocery</figcaption>
+                </figure></a></li>
+                </ul>
+                </div>
+        <div id="searchbar">
+                <form>
+                    <input type="text" placeholder="Type here to search....">
+                    <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                      </svg></button>
+                </form>
+        </div>
+        <div  class="Add-container">
+            <div class="Add fade"><img src="add1.jpg"/></div>
+            <div class="Add fade"><img src="add2.jpg" /></div>
+            <div class="Add fade"><img src="add3.jpg" /></div>
+            <div class="Add fade"><img src="add4.jpg" /></div>
+            <div class="Add fade"><img src="add5.jpg"/></div>
+            <a class="prev" onclick="prev()">&#10094;</a>
+            <a class="next" onclick="next()">&#10095;</a>
+        </div>
+        <div class="dot-container">
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span> 
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+        <div id="top-offers" >
+            <h2 style="color:blue;padding-left:8px ;">Deals of the day</h2>
+            <img src="timer.svg"/>
+            <p id="timer"></p>
+        </div>
+        <div class="row1" >
+            <ul class="price">
+                <li><img src="homefurnishing.webp" title="Upto 80% OFF"></li>
+                <li class="header">Home furnishing range</li>
+                <li class="sub">Upto 80% OFF</li>
+                <li class="grey">Curtains,blankets & more</li>
+            </ul>
+            <ul class="price">
+             <li><img src="candles.webp" title="under ₹599+Upto 10% OFF"></li>
+             <li class="header">Diyas,Candles & holders</li>
+             <li class="sub">under ₹599+Upto 10% OFF<s>₹999</s></li>
+             <li class="grey">Big discounts</li>
+            </ul>
+            <ul class="price">
+            <li><img src="watch.webp" title="Min 60% OFF"></li>
+            <li class="header">Titan,FastTrack,Sonata..</li>
+            <li class="sub">Min 60% OFF</li>
+            <li class="grey">Best selling Styles!</li>
+            </ul>
+            <ul class="price">
+            <li><img src="jwellary.webp" title="Under ₹499+Extra 10% OFF"></li>
+            <li class="header">Jwellary Set</li>
+            <li class="sub">Under ₹499+Extra 10% OFF</li>
+            <li class="grey">For Every special days!</li>
+           </ul>
+          <ul class="price">
+            <li><img src="wallet.webp" title="Min 40% OFF+Extra 10% OFF"></li>
+            <li class="header">Wallets and belts</li>
+            <li class="sub">Min 40% OFF+Extra 10% OFF</li>
+            <li class="grey">Don't Miss the crazy deal</li>
+        </ul>
+        </div>  
+        <div id="electronics" >
+            <h1 style="padding-left:8px ;color: darkblue;">Best of electronics</h1>
+        </div>  
+        <div class="row2" >
+            <ul class="price">
+                <li><img src="lap.webp" title="From ₹47,990"></li>
+                <li class="header">12 th Gen laptops</li>
+                <li class="sub">From ₹47,990</li>
+                <li class="grey">High performance Laptops</li>
+            </ul>
+            <ul class="price">
+             <li><img src="printers.webp" title="From ₹3999"></li>
+             <li class="header">Printers</li>
+             <li class="sub">From ₹3999</li>
+             <li class="grey">HP</li>
+            </ul>
+            <ul class="price">
+            <li><img src="monitor.webp" title="From ₹8000"></li>
+            <li class="header">ViewSonic Monitors</li>
+            <li class="sub">From ₹8000</li>
+            <li class="grey">Top Rated</li>
+            </ul>
+            <ul class="price">
+            <li><img src="camera.webp" title="shop now!"></li>
+            <li class="header"> Top Mirrorles Cameras</li>
+            <li class="sub">shop now!</li>
+            <li class="grey">Canon,Sony,Fujifilm...</li>
+           </ul>
+          <ul class="price">
+            <li><img src="corelap.webp" title="Min 40% OFF+Extra 10% OFF"></li>
+            <li class="header">Core i3 Laptops</li>
+            <li class="sub">From ₹29,900 </li>
+            <li class="grey">Windows| Performance</li>
+        </ul>
+        </div>  
+        <div id="Beuty" >
+            <h1 style="padding-left:8px ;color: darkblue;">Beuty,Food,Toys & More</h1>
+        </div>   
+        <div class="row3" >
+            <ul class="price">
+                <li><img src="car.webp" title="up to 80% off"></li>
+                <li class="header">Remote Control toys</li>
+                <li class="sub">up to 80% off</li>
+                <li class="grey">Buy now!</li>
+            </ul>
+            <ul class="price">
+             <li><img src="helmet.webp" title="From ₹699"></li>
+             <li class="header">Rider Helmets</li>
+             <li class="sub">From ₹699</li>
+             <li class="grey">Vega,Steelbird,HRX and ...</li>
+            </ul>
+            <ul class="price">
+            <li><img src="tricycles.webp" title="Upto 70% OFF"></li>
+            <li class="header">Tricycles & Rideons</li>
+            <li class="sub">Upto 70% OFF</li>
+            <li class="grey">Figurines,Battle Toys&...</li>
+            </ul>
+            <ul class="price">
+            <li><img src="tyre.webp" title="From 799"></li>
+            <li class="header">Tyres</li>
+            <li class="sub">From 799</li>
+            <li class="grey">Apollo,Bridge Stone,ceat....</li>
+           </ul>
+          <ul class="price">
+            <li><img src="bat.webp" title="upto 70% off"></li>
+            <li class="header">Cricket,foot ball and more</li>
+            <li class="sub">upto 70% off</li>
+            <li class="grey">ceat,nivea,Li-Ning,..</li>
+        </ul>
+        </div> 
+        <div id="sports" >
+            <h1 style="padding-left:8px ;color: darkblue;">Sports,Health care & more</h1>
+        </div>  
+        <div class="row4" >
+            <ul class="price">
+                <li><img src="dryfruits.webp" title="up to 70% off"></li>
+                <li class="header">Dry fruits</li>
+                <li class="sub">up to 70% off</li>
+                <li class="grey">Happilo,Farmley and more</li>
+            </ul>
+            <ul class="price">
+             <li><img src="books.webp" width="200px" height="200px" title="Min 30% off"></li>
+             <li class="header">Most searched Books</li>
+             <li class="sub">Min 30% off</li>
+             <li class="grey">Shop now!</li>
+            </ul>
+            <ul class="price">
+            <li><img src="puzzles.webp" title="From ₹79"></li>
+            <li class="header">Puzzles & Cubes</li>
+            <li class="sub">From ₹79</li>
+            <li class="grey">Unmissable offers!</li>
+            </ul>
+            <ul class="price">
+            <li><img src="bath.webp" title="Upto 40% off"></li>
+            <li class="header">Bath & shower</li>
+            <li class="sub">Upto 40% off</li>
+            <li class="grey">Apollo,Bridge Stone,ceat....</li>
+           </ul>
+          <ul class="price">
+            <li><img src="skincare.webp" title="upto 70% off"></li>
+            <li class="header">Cricket,foot ball and more</li>
+            <li class="sub">upto 70% off</li>
+            <li class="grey">pears,fiama & More</li>
+        </ul>
+        </div>  
+        <div id="Home" >
+            <h1 style="padding-left:8px ;color: darkblue;">Home and Kitchen Essentials</h1>
+        </div> 
+        <div class="row5" >
+            <ul class="price">
+                <li><img src="bulb.webp" title="up to 80% off"></li>
+                <li class="header">Bulbs</li>
+                <li class="sub">up to 80% off</li>
+                <li class="grey">Big discounts</li>
+            </ul>
+            <ul class="price">
+             <li><img src="artificialplants.webp" width="200px" height="200px" title="up to 80%"></li>
+             <li class="header">Artificial plants</li>
+             <li class="sub">up to 80%</li>
+             <li class="grey">Big discounts</li>
+            </ul>
+            <ul class="price">
+            <li><img src="pillowcover.webp" title="From ₹79"></li>
+            <li class="header">Pillow covers</li>
+            <li class="sub">From ₹79</li>
+            <li class="grey">Best Selling Range!</li>
+            </ul>
+            <ul class="price">
+            <li><img src="liveplant.webp" title="From ₹199"></li>
+            <li class="header">Live Plants</li>
+            <li class="sub">From ₹199</li>
+            <li class="grey">Best Selling</li>
+           </ul>
+          <ul class="price">
+            <li><img src="wallpapers.webp" title="upto 80% off"></li>
+            <li class="header">Stickers & Wall papers</li>
+            <li class="sub">upto 80% off</li>
+            <li class="grey">Big discounts!</li>
+        </ul>
+        </div>  
+        <div id="fashion" >
+            <h1 style="padding-left:8px ;color: darkblue;">Fashion Top deals</h1>
+        </div> 
+        <div class="row6" >
+            <ul class="price">
+                <li><img src="tops.webp" title="Min 60% off"></li>
+                <li class="header">Tops,dresses,jeans,...</li>
+                <li class="sub">Min 60% off</li>
+                <li class="grey">AND,sasafras,Killer,..</li>
+            </ul>
+            <ul class="price">
+             <li><img src="shoes.webp"  title="Min 50% off"></li>
+             <li class="header">Levi's,Flying Machine,&..</li>
+             <li class="sub">Min 50% off</li>
+             <li class="grey">Men's Sneakers</li>
+            </ul>
+            <ul class="price">
+            <li><img src="slippers.webp" title="Min 40% off"></li>
+            <li class="header">Puma,Beta,Crocs,..</li>
+            <li class="sub">Min 40% off</li>
+            <li class="grey">Women's shoes & Sandal</li>
+            </ul>
+            <ul class="price">
+            <li><img src="handbag.webp" title="40%-70%"></li>
+            <li class="header">Lavie,Caprese,Allen Solley</li>
+            <li class="sub">40%-70%</li>
+            <li class="grey">Best Selling</li>
+           </ul>
+          <ul class="price">
+            <li><img src="kids.webp" title="upto 80% off"></li>
+            <li class="header">kids shirts,gowns..</li>
+            <li class="sub">upto 80% off</li>
+            <li class="grey">Grab the deal</li>
+        </ul>
+        </div>
+        <div id="furniture" >
+            <h1 style="padding-left:8px ;color: darkblue;">Furniture Best Sellers</h1>
+        
+        </div> 
+        <div class="row7" >
+            <ul class="price">
+                <li><img src="wardrobes.webp" title="From ₹4999"></li>
+                <li class="header">wardrobes</li>
+                <li class="sub">From ₹4999</li>
+                <li class="grey">1,2,3 Doors</li>
+            </ul>
+            <ul class="price">
+             <li><img src="beds.webp"  title="Upto 70% off"></li>
+             <li class="header">Bestselling Beds</li>
+             <li class="sub">Upto 70% off</li>
+             <li class="grey">King,Queen & More</li>
+            </ul>
+            <ul class="price">
+            <li><img src="matresses.webp" title="upto 60% off"></li>
+            <li class="header">Matresses</li>
+            <li class="sub">upto 60% off</li>
+            <li class="grey">Spring, Foam and more</li>
+            </ul>
+            <ul class="price">
+            <li><img src="studytable.webp" title="From ₹1299"></li>
+            <li class="header">Office study table</li>
+            <li class="sub">From ₹1299</li>
+            <li class="grey">Work at home like a boss</li>
+           </ul>
+          <ul class="price">
+            <li><img src="sofa.webp" title="From ₹799"></li>
+            <li class="header">sofa and sectional</li>
+            <li class="sub">From ₹799</li>
+            <li class="grey">Fabric and leatherite</li>
+        </ul>
+        </div>  
+        <div id="topstory">
+            <h2 style="color:grey;background-color: aliceblue;">Top Stories:<span style="color:dimgray;font-weight: bold;padding-left:20px;padding-bottom: 20px;">Brand directory</span><br><br></h2>
+            <p >Most searched on Shopeasy:<span>Bounce Infinity E1|Google Pixel 6A|vivo T1|XOPPO Reno8 5G|OPPO Reno8 Pro 
+                5G|Nothing Phone 1|Sell Old Mobile Phones|ASUS TUF Gaming F|15 Core i5 10th Gen|Electronics Store|OPPO A16K|Vivo Y33|TOPPO Reno7 5G|Bathroom Exhaust 
+                Fan|Samsung Window ACOPPO Reno|7 Pro 5G|iPhone 13|iPhone 13 Pro|iPhone 13 Pro Max|iPhone 13 |MiniGoogle Pixel 6a covers|shopeasy QuickBooks
+                shopeasy Help Centre|Online Boat Store|shopeasy Track Orders|shopeasy Manage Orders|shopeasy Return Orders|Flipkart Gift Cards Store|shopeasy Axis Bank 
+                Credit Card|shopeasy Pay Later</span></p>
+            <p>MOBILES:<span>iPhone 12 64GB|iPhone 12 Pro 512GB|iPhone 12 128GB|Vivo Y91i|Vivo Y11|Vivo Y15|Vivo Y50|Vivo Y12|Reno2 FOppo A12|
+                Oppo F15|Oppo A31|Samsung A71|Samsung A51|Samsung A31|Realme X2|iPhone 11|iPhone 11 Pro|iPhone 11 Pro Max|Mobile Offersiphone x4G MobileNokia MobileSamsung MobileiphoneOppo MobileVivo Mobile</span></p>
+                <p >CAMERA:<span >GoPro Action Camera|Nikon Camera|Canon Camera|Sony Camera|Canon DSLR|Nikon DSLR</span></p>
+                <p>LAPTOPS:<span>MacBook Pro M2|acer Ryzen 3 Dual Core 3250U - (8 GB/256 GB SSD/Windows 11 Home) Z2-493 Thin and Light Laptop|ASUS Vivobook S14 OLED (2022)|ASUS Zenbook 14 OLED (2022)|Realme Book Prime Core i5 11th Gen|
+                 Microsoft Surface Go Pentium 128GB|Branded Laptops|Apple Laptops|Acer Laptops|Lenovo Laptops|Dell Laptops|Asus Laptops|HP Laptops|Gaming Laptops|2 in 1 Laptops|Laptops|Dell latest laptops 2022|HP latest laptops 2022|
+                Infinix INBook X1 Neo Series Celeron Quad Core - (8 GB/256 GB SSD/Windows 11 Home) XL22 Thin and Light Laptop|Microsoft Laptops|
+                12th Gen Intel Core Laptops</span></p>
+                <p>TVS:<span>Nokia TV|Panasonic TV|Thomson TV|Vu TV|Realme TV|Motorola TV|OnePlus TV|sLG TV|Sony TV|Samsung TV|
+                    Android Television|Iffalcon Tv|Mi TV</span></p>
+                <p>LARGE APPLIANCES:<span>TV & Appliances End of Season Sale|Television|Washing Machines|Refrigerators|Air Conditioners|Electric Cookers|Electric Jug(Heater) / Travel Kettles|
+                    Induction Cook| topsInverters / stabilizerIrons / Iron BoxMixer Grinder Juicer|Wet Grinders|Chimneys|
+                   Microwave Ovens|Vacuum Cleaners|Water Purifier|Fan|MarQ Customer Care</span></p>
+                <p>CLOTHING:<span>Men Shirts|Kurta Pajama|Kurtas|Men T-Shirts|Jeans|Saree|Dresses|Kids Dresses|
+                    Designer Salwar Suits|Bra|Designer Kurtis|Track Pant|Men Kurtas|Gym Wear|Party Dresses|
+                    Palazzo Suits|Boys Clothing|Gloves|Nighty|Maxi Dresses|Anarkali|Gowns|Culottes|Salwar Suits|
+                    Kurtis|Designer Sarees|Leggings|Shorts|Georgette Sarees|Ethnic WearBriefs & Trunks|Nike Watches|Ascot Tie|Corset Tops Tunics|
+                    Leather PU Skirts|Corset tops camisoles|Women magenta |earrings|No collar jackets|Green dress material|Black patiala kurta set|
+                    Men camel shoes casual|Black pathani|Wallets sling|Khaki dresses|Kids formal dresses|
+                    Mauve shirts|Women henley|Indigo trousers|Leopard dresses|Sleeveless shrugs</span></p>
+                <p>FOOTWEAR:<span>Shoes|Adidas Shoes|Reebok Shoes|Nike Shoes|Puma Shoes|Boots|Bata Shoes|Woodland Shoes|Skechers Shoes|Sneakers|Womens Boots|Sports Shoes|
+                    Loafers|Sandals|Lotto Sports Shoes|Casual Shoes|Womens Skechers Shoes|Asics Sports Shoes|Formal Shoes|School Shoes</span></p>
+                <p >GROCERIES:<span>PhonePe Grocery Voucher|Hand Wash|Soap|Cashew Nuts|
+                    Sunflower Oil|Eggs|Toilet Cleaner|Harpic Toilet Cleaner|Dettol Soap|Mustard Oil|Biscuits|
+                    Cheese|Patanjali Atta|Fortune Oil|Aashirvaad Atta|Tea</span></p>
+                <p>BEST SELLING ON FLIPKART:<span>Fire-Boltt Ninja Calling Pro Bluetooth Calling Smartwatch 1.69 inch HD Display Smart|watchBest Gas Geyser|Kitchen Geyser|Nutri Blenders|Portable Air Cooler|Best Air CoolerBags|Hitachi Refrigerator 3 Door|
+                    BooksToys|Candles|Helmets|Wall Clocks|Baby Food|Chocolates|Cycles|Calculators|Lipsticks|MaskVertiv UPS|Fastrack Watches|Wallets|Earrings|Gold Coins|Realme Pad MiniHandbags|conekt SW2 Smartwatch|Mivi DuoPods a350|
+                    Speaker Cleaner</span></p>
+                <p>FURNITURE:<span>Furniture|Sofas|Beds|Dining sets|Wardrobes|Mattresses|TV Units|
+                    Tables|Chairs|Shelves|Bean Bags|Office Chairs|Computer Table|Office Tables|Red Sofa|Wakefit Beds|White Sofa|Wakefit Mattress|
+                    Green Sofa|Black Sofa|Brown Sofa</span><br><br></p>
+                  
+                  <p style="font-weight:bold;color:#818181">Shopeasy:<span>The One-stop Shopping Destination</span></p>
+                  <p style="font-size:17px;"><br>E-commerce is revolutionizing the way we all shop in India. Why do you want to hop from one store to another 
+                    in search of the latest phone when you can find it on the Internet in a single click? Not only mobiles. shopeasy houses everything you can possibly imagine, from trending
+                     electronics like laptops, tablets, smartphones, and mobile accessories to in-vogue fashion staples 
+                     like shoes, clothing and lifestyle accessories; from modern furniture like sofa sets, dining tables, 
+                     and wardrobes to appliances that make your life easy like washing machines, TVs, ACs, mixer grinder 
+                     juicers and other time-saving kitchen and small appliances; from home furnishings like cushion covers,
+                      mattresses and bedsheets to toys and musical instruments, we got them all covered. You name it, and you 
+                      can stay assured about finding them all here. For those of you with erratic working hours, Shopeasy is your best bet. Shop in your PJs, at night or in the wee hours of the morning. This e-commerce never shuts down.
+                    What's more, with our year-round Shopping festivals and events, our prices are
+                     irresistible. We're sure you'll find yourself picking up more than what you had 
+                     in mind. If you are wondering why you should shop from Shopeasy when there 
+                     are multiple options available to you, well, the below will answer your question<br><br></p>
+                     <p  style="font-weight:bold;color:#818181">Shopeasy Plus:<br><br></p>
+                        <p style="font-size:17px;">
+                        A world of limitless possibilities awaits you - Shopeasy Plus was kickstarted as a loyalty reward programme for all its regular customers
+                 at zero subscription fee. All you need is 500 supercoins to be a part of this service. For every 100 rupees spent on shopeasy order, Plus members 
+                 earns 4 supercoins & non-plus members earn 2 supercoins. Free delivery, early access during sales and shopping festivals, exchange offers and
+                 priority customer service are the top benefits to a Shopeasy Plus member. In short, earn more when you shop more!<br>
+                What's more, you can even use the Shopeasy supercoins for a number of exciting services, like:<br><br>
+                  An annual Zomato Gold membership<br>
+                  An annual Hotstar Premium membership<br>
+                  6 months Gaana plus subscription<br>
+                  Rupees 550 instant discount on flights on ixigo<br><br>
+                     </p>
+                     <p  style="font-weight:bold;color:#818181">No Cost EMI<br><br></p>
+                        <p style="font-size:17px;">
+                            In an attempt to make high-end products accessible to all, our No Cost EMI 
+                            plan enables you to shop with us under EMI, without shelling out any processing fee. 
+                            Applicable on select mobiles, laptops, large and small appliances, furniture, 
+                            electronics and watches, you can now shop without burning a hole in your pocket. 
+                            If you've been eyeing a product for a long time, chances are it may be up for a no
+                           cost EMI. Take a look ASAP! Terms and conditions apply.<br><br>
+                     </p>
+                     <p  style="font-weight:bold;color:#818181">EMI on Debit Cards:<br><br></p>
+                     <p style="font-size:17px;">
+                        Did you know debit card holders account for 79.38 crore in the country, while there are only 3.14 
+                        crore credit card holders? After enabling EMI on Credit Cards, in another 
+                        attempt to make online shopping accessible to everyone, Flipkart introduces 
+                        EMI on Debit Cards, empowering you to shop confidently with us without having
+                         to worry about pauses in monthly cash flow. At present, we have partnered with 
+                        Axis Bank, HDFC Bank, State Bank of India and ICICI Bank for this facility.
+                         More power to all our shoppers! Terms and conditions apply.<br><br>
+                    </p>
+                    <p  style="font-weight:bold;color:#818181">Mobile Exchange Offers<br><br></p>
+                     <p style="font-size:17px;">
+                        Get an instant discount on the phone that you have been eyeing on. Exchange your old
+                         mobile for a new one after the Flipkart experts calculate the value of your old 
+                         phone, provided it is in a working condition without damage to the screen. If a
+                          phone is applicable for an exchange offer, you will see the 'Buy with Exchange' 
+                          option on the product description of the phone. So, be smart, always opt for an
+                         exchange wherever possible. 
+                        Terms and conditions apply.<br><br>
+                    </p>
+                    <p  style="font-weight:bold;color:#818181">What Can You Buy From Shopeasy?
+                        <br><br></p>
+                        <p  style="font-weight:bold;color:#818181">Mobile Phones
+                            <br><br></p>
+                     <p style="font-size:17px;">
+                        From budget phones to state-of-the-art smartphones, we have a mobile for everybody out
+                         there. Whether you're looking for larger, fuller screens, power-packed batteries, 
+                         blazing-fast processors, beautification apps, high-tech selfie cameras or just 
+                         large internal space, we take care of all the essentials. Shop from top brands
+                          in the country like Samsung, Apple, Oppo, Xiaomi, Realme, Vivo, and Honor to name 
+                          a few. Rest assured, you're buying from only the most reliable names in the market.
+                           What's more, with Flipkart's Complete Mobile Protection Plan, you will never again
+                            find the need to run around service centres. This plan entails you to a number of 
+                            post-purchase solutions, starting at as low as Rupees 99 only! Broken screens,
+                             liquid damage to phone, hardware and software glitches, and replacements - 
+                             the Flipkart Complete Mobile Protection covers a comprehensive range of 
+                             post-purchase problems,
+                         with door-to-door services.<br><br>
+                    </p>
+                    <p  style="font-weight:bold;color:#818181">Electronic Accessories:
+                        <br><br></p>
+                 <p style="font-size:17px;">
+                    When it comes to laptops, we are not far behind. Filter among dozens of super-fast operating systems, hard disk capacity, RAM, lifestyle, screen size and many other criterias for personalized results in a flash. All you students out there, confused about what laptop to get? Our Back To College Store segregates laptops purpose wise (gaming, browsing and research, project work, entertainment, design, multitasking) with recommendations from top brands and industry experts, facilitating a 
+                    shopping experience that is quicker and simpler.<br><br>
+                    Photography lovers, you couldn't land at a better page than ours. Cutting-edge 
+                    DSLR cameras, ever reliable point-and-shoot cameras, millennial favourite instant 
+                    cameras or action cameras for adventure junkies: our range of cameras is as much for
+                     beginners as it is for professionals. Canon, Nikon, GoPro, Sony, and Fujifilm are 
+                     some big names you'll find in our store. Photography lovers, you couldn't land at
+                      a better page than ours. Cutting-edge DSLR cameras, ever reliable point-and-shoot 
+                      cameras, millennial favourite instant cameras or action cameras for adventure
+                       junkies: our range of cameras is as much for beginners as it is for professionals. Canon, Nikon, GoPro, Sony, and Fujifilm are some big
+                     names you'll find in our store<br><br>
+                     
+                  Turn your home into a theatre with a stunning surround sound system.
+                   Choose from our elaborate range of Sony home theatres, JBL soundbars 
+                   and Philips tower speakers for an experience to remember.<br><br>
+                </p>
+                <p  style="font-weight:bold;color:#818181">Large Appliances:
+                    <br><br></p>
+                    <p style="font-size:17px;">
+                        Sleek TVs, power-saving refrigerators, rapid-cooling ACs, resourceful washing machines - discover everything you need to run a house under one roof. Our Dependable TV and Appliance Store ensures zero transit damage, with a replacement guarantee if anything goes wrong; delivery and installation as per your convenience and a double warranty (Official Brand Warranty along with an extended Flipkart Warranty) - rest assured, value for money is what is promised and delivered. Shop from market leaders in the country like Samsung, LG, Whirlpool, Midea, Mi, Vu, Panasonic, Godrej, 
+                        Sony, Daikin, and Hitachi among many others.<br><br>
+                    </p>
+                    <p  style="font-weight:bold;color:#818181">small Appliances:
+                        <br><br></p>
+                        <p style="font-size:17px;">
+                            Find handy and practical home appliances designed to make your life simpler: electric kettles, OTGs, microwave ovens, sandwich makers, hand blenders, coffee makers, and many more other time-saving appliances that are truly crafted for a quicker lifestyle.
+                             Live life king size with these appliances at home.<br><br>
+                        </p>
+                        <p  style="font-weight:bold;color:#818181">small Appliances:
+                            <br><br></p>
+                            <p style="font-size:17px;">
+                                Shopeasy, 'India ka Fashion Capital', is your one-stop fashion destination for anything and everything you need to look good. Our exhaustive range of Western and Indian wear, summer and winter clothing, formal and casual footwear, bridal and artificial jewellery, long-lasting make-up, grooming tools and accessories are sure to sweep you off your feet. Shop from crowd favourites like Vero Moda, Forever 21, Only, Arrow, Woodland, Nike, Puma, Revlon, Mac, and Sephora among dozens of other top-of-the-ladder names. From summer staple maxi dresses, no-nonsense cigarette pants, traditional Bandhani kurtis to street-smart biker jackets, you can rely on us for a wardrobe that is up to date. Explore our in-house brands like Metronaut, Anmi, and Denizen, to name a few, for carefully curated designs that are the talk of the town. Get ready to be spoiled for choice.Festivals, office get-togethers, weddings, brunches, or nightwear - 
+                                Shopeasy will have your back each time.<br><br>
+                            </p>
+                            <p  style="font-weight:bold;color:#818181">Home and Furniture:
+                                <br><br></p>
+                                <p style="font-size:17px;">
+                                    Moving to a new place is never easy, especially if you're buying new furniture. Beds, sofa sets, dining tables, wardrobes, and TV units - it's not easy to set up everything again. With the hundreds of options thrown at you, the ride could be overwhelming. What place is reliable, what furniture will stand the test of time? These are questions you must ask before you choose a store. Well, our Durability Certified Furniture Store has not only curated a range of furniture keeping in mind the modern Indian consumer but furniture that comes with a lab certification, ensuring they last you for up to 10 years. Yes, all our furniture has gone through 35 stability and load tests so that you receive only the best-quality furniture. Be FurniSure, always. Names to look out for are Nilkamal, Godrej Interio, Urban Ladder, HomeTown, Durian and Perfect Homes.<br><br>
+                                    
+                                   You may have your furniture all set up, but they could end up looking flat and incomplete 
+                                   without complementary decor. Curtains, cushion covers, bed sheets, wall shelves, paintings, floor lamps - find everything that turns a house to an inviting home under one roof at Flipkart.<br><br>
+                                </p>
+                                <p  style="font-weight:bold;color:#818181">Baby and Kids
+                                    <br><br></p>
+                                    <p style="font-size:17px;">  Your kids deserve only the best. From bodysuits, booties, diapers to strollers, if you're an 
+                                        expecting mother or a new mother, you will find everything you need to set sail on a smooth
+                                         parenting journey with the help of our baby care collection. When it comes to safety, hygiene and
+                                          comfort, you can rely on us without a second thought. Huggies, Pampers, MamyPoko, and Johnson & Johnson:
+                                           we host only the most-trusted names in the business for your baby<br><br></p>
+                            <p  style="font-weight:bold;color:#818181">Books, Sports and Games:<br><br></p>
+                            <p style="font-size:17px;">  Work hard and no play? We don't believe in that. Get access to best-selling fiction and non-fiction books by your favourite authors, thrilling English and Indian blockbusters, most-wanted gaming consoles, and a tempting range of fitness and sports gadgets and equipment bound to inspire you 
+                            to get moving.<br><br></p>
+                            <p  style="font-weight:bold;color:#818181">Grocery/Supermarket
+                                <br><br></p>
+                        <p style="font-size:17px;">Launching into the grocery vertical, Flipkart introduces Supermart that is out to bring 
+                            everyday essentials close to you. From pulses, spices, dairy, personal and sanitary care, breakfast essentials, health drinks, 
+                            spreads, ready to cook, grooming to cleaning agents, we are happy to present everything you need to run a house.
+                             Now buy Grocery products for as low as 1 Rupee only - our 1 Rupee Store presents new products every day for a nominal price of 1 Rupee only. Terms and conditions apply.<br><br></p>
+                        </div> 
+                    
+       <div id="menubar" class="sidebar">
+        <div id="cross" style="text-align:right;"><a href="javascript:void(0)" class="close" onclick="closebar()">&times</a></div>
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+                    <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
+                </svg>Home
+                </a>
+                <a href="Account"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"/>
+                  </svg>Account</a>
+                <a href="favourites.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+                    <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+                  </svg>Favourite</a>
+                <a href="Addtocart.html"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart3" viewBox="0 0 16 16">
+                    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                  </svg><div>Cart</div></a>
+        </div> 
+        <footer>
+          <p><br><br></p>
+          <div style="display:grid;grid-auto-flow: column;">
+           <ul>
+            <li style="color:#c2c0c0;font-size: 25px;"><br><br><br><br>
+                About<br><br></li>
+            <li>Contact Us</li><br>
+             <li>About Us</li><br>
+            <li >Careers</li><br>
+              <li>Shop easy Stories</li><br>
+                <li>Press</li><br>
+                <li>Shop easy Wholesale</li><br>
+                <li>Corporate Information</li><br>
+           </ul>
+           <ul>
+            <li style="color:#c2c0c0;font-size: 25px;"><br><br><br><br>
+                Help<br><br></li>
+            <li>Payments</li><br>
+             <li>Shipping</li><br>
+            <li >Cancellation and returns</li><br>
+              <li>FAQ </li><br>
+                <li>Report infringement</li><br>
+           </ul>
+           <ul>
+            <li style="color:#c2c0c0;font-size: 25px;"><br><br><br><br>
+                Policy<br><br></li>
+            <li>Return Policy</li><br>
+             <li>Terms of use</li><br>
+            <li >Security</li><br>
+              <li>Privacy</li><br>
+                <li>Sitemap</li><br>
+                <li>EPR compliances</li><br>
+           </ul>
+           <ul>
+            <li style="color:#c2c0c0;font-size: 25px;"><br><br><br><br>
+                Social<br><br></li>
+            <li>FaceBook</li><br>
+             <li>Twitter</li><br>
+            <li >YouTube</li><br>
+           </ul>
+           <span class="vertical"></span>
+           <ul>
+          <li style="color:#c2c0c0;font-size: 25px;"><br><br><br><br>
+            Mail us:<br><br></li>
+          <li>Flipkart Internet Private Limited,</li>
+        <li>Buildings Alyssa, Begonia &</li>
+          <li>Clove Embassy Tech Village,</li>
+        <li>Outer Ring Road, Devarabeesanahalli Village,</li>
+        <li>Bengaluru, 560103,</li>
+        <li>Karnataka, India</li>
+        </ul>
+        <ul>
+            <li style="color:#c2c0c0;font-size: 25px;"><br><br><br><br>
+              Registered Office Address:<br><br></li>
+          <li>Flipkart Internet Private Limited,</li>
+          <li>Buildings Alyssa, Begonia &</li>
+         <li>Clove Embassy Tech Village,</li>
+         <li>Outer Ring Road, Devarabeesanahalli Village,</li>
+           <li>Bengaluru, 560103,</li>
+          <li>Karnataka, India</li>
+          <li>CIN : U51109KA2012PTC066107</li>
+          <li>Telephone: 044-45614700</li>
+          </ul></div>
+          <hr>    
+          <div id="final">
+            
+             <p><a href="seller.html"><img src="seller.svg">Become a Seller</a>
+                <a href="advertise.html"><img src="advertise.svg">Advertise</a> 
+                <a href="gifts.html"><img src="giftcards.svg">Gift cards</a> 
+                <a href="help.html"><img src="helpcenter.svg">Help Center</a> 
+                <a href="copy.html">© 2022 Shopeasy.com</a>&nbsp;&nbsp;
+                <a href="payment.html"><img src="visa.svg"></a></p>
+           </div>    
+    </footer>
+   
+    
+        
+        <script>
+        function openbar() {
+        document.getElementById("menubar").style.width = "100px";
+        
+        document.getElementById("categories").style.marginLeft = "50px";
+
+        }
+
+        function closebar() {
+             document.getElementById("menubar").style.width = "0";
+             
+             document.getElementById("categories").style.marginLeft= "0";
+        }
+        let slideIndex = 0;
+        let slides = document.getElementsByClassName("Add");
+        showSlides();
+        function showSlides() {
+                 let i;
+                 let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                      slides[i].style.display = "none";  
+            }
+               slideIndex++;
+             if (slideIndex > slides.length) {slideIndex = 1}    
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+               }
+                slides[slideIndex-1].style.display = "block";  
+             dots[slideIndex-1].className += " active";
+             setTimeout(showSlides, 2000); // Change image every 2 seconds
+            }
+            function prev(){
+                let c=slideIndex-1;
+                if(c<1){
+                    c=slides.length-1;
+                }
+                for (i = 0; i < slides.length; i++) {
+                      slides[i].style.display = "none";  
+                }
+
+                slides[c].style.display="block";
+
+               slideIndex=c;
+            }
+            function next(){
+                let n=slideIndex+1;
+                if(n>slides.lenth){
+                    n=1;
+                }
+                for (i = 0; i < slides.length; i++) {
+                      slides[i].style.display = "none";  
+                }
+                slides[n].style.display="block";
+                slideIndex=n;
+            }
+
+var countDownDate = new Date("jan 30, 2023 12:30:00").getTime();
+
+var x = setInterval(function() {
+
+  var now = new Date().getTime();
+    
+  var distance = countDownDate - now;
+
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+  document.getElementById("timer").innerHTML = hours + ": "
+  + minutes + ": " + seconds+" left";
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("timer").innerHTML = "EXPIRED";
+  }
+}, 1000);
+            
+
+            
+    
+      
+        </script>
+    </body>
+</html>
